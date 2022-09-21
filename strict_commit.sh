@@ -1,4 +1,5 @@
 PS3="Select type of commit: "
+COLUMNS=12
 
 commit_types=(
 "feat 🚀:" 
