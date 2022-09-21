@@ -8,9 +8,9 @@ commit_types=(
 "conflict_fix 🤯:"
 "docs 😶‍🌫️:"
 "style 💇🏽‍♂️:"
-"test 🧪:"
-"chore 🛒:"
-"merge ⧉:"
+"test:"
+"chore:"
+"merge:"
 )
 
 current_branch=$(git symbolic-ref --short -q HEAD)
