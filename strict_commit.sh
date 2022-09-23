@@ -8,9 +8,9 @@ commit_types=(
 "conflict_fix 🤯:"
 "docs 😶‍🌫️:"
 "style 💇🏽‍♂️:"
-"test:"
-"chore:"
-"merge:"
+"test 🧪:"
+"chore 🛒:"
+"merge ⧉:"
 )
 
 current_branch=$(git symbolic-ref --short -q HEAD)
@@ -21,9 +21,18 @@ do
     read commit
     final="$character $commit"
 
+    echo "Do you want to push to your remote branch ? [y, n]"
+    read push
+
     git add .
     git commit -m "$final"
-    git push origin "$current_branch"
+
+    if ["$push" = "y"] || ["$push" = "Y"]
+    then
+        git push origin "$current_branch"
+    else
+        echo "====Commits are only in local. Push to remote to sync===="
+    fi
 
     exit
 done
