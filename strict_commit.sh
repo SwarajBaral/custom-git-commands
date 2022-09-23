@@ -27,7 +27,7 @@ do
     git add .
     git commit -m "$final"
 
-    if ["$push" = "y"] || ["$push" = "Y"]
+    if [ "$push" = "y" ] || [ "$push" = "Y" ]
     then
         git push origin "$current_branch"
     else
